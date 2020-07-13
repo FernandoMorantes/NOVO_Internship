@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "BxProject",
-    "slug": "BxProject",
+    "name": "Savings",
+    "slug": "Savings",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
@@ -15,7 +15,13 @@
       "fallbackToCacheTimeout": 0
     },
     "ios": {
+      "bundleIdentifier": "com.novo.savings",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.novo.savings",
+      "versionCode": 1
     }
   }
 }
