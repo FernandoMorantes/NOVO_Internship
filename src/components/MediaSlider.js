@@ -10,8 +10,8 @@ import {
 import Gradient from "react-native-css-gradient";
 import Carousel from "react-native-carousel-control";
 
-const screenWidth = Dimensions.get('window').width;
 function MediaSlider(props) {
+  const [currentPage, setcurrentPage] = useState(true);
   return (
     <View style={[styles.container, props.style]}>
       <Carousel 
@@ -19,7 +19,7 @@ function MediaSlider(props) {
         pageStyle={styles.carouselPage} 
         swipeThreshold={0.10} 
         sneak={0} 
-        pageWidth={screenWidth}>
+        pageWidth={Dimensions.get('window').width - 48}>
         <View>
           <View style={styles.media}>
             <View style={styles.mediaImgContainer1Stack}>
@@ -90,8 +90,8 @@ function MediaSlider(props) {
                   <View style={styles.mediaInfo1}>
                     <Text style={styles.estoEsAhorro1}>Esto es AHORRO 2</Text>
                     <Text style={styles.mediaDesc1}>
-                      Conoce como nuestro roboAdvisor crea el mejor portafolio de
-                      inversión para ti 2.
+                      Conoce como nuestro roboAdvisor 2 crea el mejor portafolio de
+                      inversión para ti.
                     </Text>
                   </View>
                 </ImageBackground>
@@ -134,8 +134,8 @@ function MediaSlider(props) {
                   <View style={styles.mediaInfo1}>
                     <Text style={styles.estoEsAhorro1}>Esto es AHORRO 3</Text>
                     <Text style={styles.mediaDesc1}>
-                      Conoce como nuestro roboAdvisor crea el mejor portafolio de
-                      inversión para ti 3.
+                      Conoce como nuestro roboAdvisor 3 crea el mejor portafolio de
+                      inversión para ti.
                     </Text>
                   </View>
                 </ImageBackground>
@@ -174,8 +174,8 @@ const styles = StyleSheet.create({
     height: 290,
     alignSelf: "stretch",
     borderRadius: 20,
-    marginLeft: 24,
-    marginRight: 24,
+    marginLeft: 0,
+    marginRight: 0,
     marginBottom: 0, 
     overflow: "hidden"
   },
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
   counter: {
     width: 50,
     height: 20,
-    marginLeft: 38,
+    marginLeft: 14,
     marginTop: 9,
     flexDirection: "row",
     justifyContent: "space-between",

@@ -1,59 +1,54 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
-import { Center } from "@builderx/utils";
+import { StyleSheet, View, Image, Text } from "react-native";
 
 function Menu(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <View style={styles.options_container}>
-        <View style={styles.options}>
-          <View style={styles.home_btn}>
-            <Center horizontal>
+      <View style={styles.options_containerStack}>
+        <View style={styles.options_container}>
+          <View style={styles.options}>
+            <View style={styles.home_btn}>
+              <Image
+                source={require("../assets/images/home_24px.png")}
+                resizeMode="contain"
+                style={styles.home_icon}
+              ></Image>
               <Text style={styles.inicio}>Inicio</Text>
-            </Center>
-            <Image
-              source={require("../assets/images/home_24px.png")}
-              resizeMode="contain"
-              style={styles.home_icon}
-            ></Image>
-          </View>
-          <View style={styles.history_btn}>
-            <Text style={styles.historial}>Historial</Text>
-            <Image
-              source={require("../assets/images/format_list_bulleted_24px1.png")}
-              resizeMode="contain"
-              style={styles.history_icon}
-            ></Image>
-          </View>
-          <Text style={styles.invest}>Ahorrar</Text>
-          <View style={styles.profile_btn}>
-            <Center horizontal>
+            </View>
+            <View style={styles.history_btn}>
+              <Image
+                source={require("../assets/images/format_list_bulleted_24px1.png")}
+                resizeMode="contain"
+                style={styles.history_icon}
+              ></Image>
+              <Text style={styles.historial}>Historial</Text>
+            </View>
+            <Text style={styles.invest}>Ahorrar</Text>
+            <View style={styles.profile_btn}>
+              <Image
+                source={require("../assets/images/account_circle_24px.png")}
+                resizeMode="cover"
+                style={styles.profile_icon}
+              ></Image>
               <Text style={styles.miPerfil}>Mi perfil</Text>
-            </Center>
-            <Image
-              source={require("../assets/images/account_circle_24px.png")}
-              resizeMode="cover"
-              style={styles.profile_icon}
-            ></Image>
-          </View>
-          <View style={styles.more}>
-            <Center horizontal>
+            </View>
+            <View style={styles.more}>
+              <Image
+                source={require("../assets/images/more_horiz_24px.png")}
+                resizeMode="contain"
+                style={styles.more_icon}
+              ></Image>
               <Text style={styles.mas}>Más</Text>
-            </Center>
-            <Image
-              source={require("../assets/images/more_horiz_24px.png")}
-              resizeMode="contain"
-              style={styles.more_icon}
-            ></Image>
+            </View>
           </View>
         </View>
-      </View>
-      <View style={styles.invest_btn_container}>
-        <Image
-          source={require("../assets/images/invest.png")}
-          resizeMode="contain"
-          style={styles.invest_btn}
-        ></Image>
+        <View style={styles.invest_btn_container}>
+          <Image
+            source={require("../assets/images/invest.png")}
+            resizeMode="contain"
+            style={styles.invest_btn}
+          ></Image>
+        </View>
       </View>
     </View>
   );
@@ -62,7 +57,7 @@ function Menu(props) {
 const styles = StyleSheet.create({
   container: {},
   options_container: {
-    top: 26,
+    top: 30,
     height: 60,
     position: "absolute",
     left: 0,
@@ -76,105 +71,102 @@ const styles = StyleSheet.create({
     shadowOffset: {
       width: 0,
       height: 0
-    }
+    },
+    justifyContent: "center",
+    overflow: "hidden"
   },
   options: {
-    top: 9,
-    height: 41,
-    position: "absolute",
-    left: 0,
-    right: 0,
+    height: 37,
     flexDirection: "row",
-    alignItems: "flex-end",
-    justifyContent: "space-around"
+    alignItems: "flex-end"
   },
   home_btn: {
-    width: 37,
     height: 41,
-    backgroundColor: "rgba(255,255,255,1)"
+    backgroundColor: "rgba(255,255,255,1)",
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    paddingRight: 2
+  },
+  home_icon: {
+    width: 20,
+    height: 17
   },
   inicio: {
-    top: 27,
-    position: "absolute",
     fontFamily: "open-sans-regular",
     color: "rgba(72,185,230,1)",
     fontSize: 10,
-    textAlign: "center"
-  },
-  home_icon: {
-    top: 4,
-    left: 8,
-    width: 20,
-    height: 17,
-    position: "absolute"
+    textAlign: "center",
+    marginTop: 9
   },
   history_btn: {
-    width: 37,
     height: 41,
-    backgroundColor: "rgba(255,255,255,1)"
+    backgroundColor: "rgba(255,255,255,1)",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "flex-end",
+    paddingLeft: 2,
+    paddingRight: 2
+  },
+  history_icon: {
+    width: 18,
+    height: 15
   },
   historial: {
-    top: 27,
-    position: "absolute",
     fontFamily: "open-sans-regular",
     color: "rgba(169,157,198,1)",
     fontSize: 10,
-    textAlign: "center"
-  },
-  history_icon: {
-    top: 3,
-    left: 11,
-    width: 18,
-    height: 15,
-    position: "absolute"
+    textAlign: "center",
+    marginTop: 8
   },
   invest: {
     fontFamily: "open-sans-regular",
     color: "rgba(169,157,198,1)",
     fontSize: 10,
     textAlign: "center",
-    height: 14,
-    width: 37
+    flex: 1,
+    paddingLeft: 2,
+    paddingRight: 2
   },
   profile_btn: {
-    width: 37,
     height: 41,
-    backgroundColor: "rgba(255,255,255,1)"
-  },
-  miPerfil: {
-    top: 27,
-    position: "absolute",
-    fontFamily: "open-sans-regular",
-    color: "rgba(169,157,198,1)",
-    fontSize: 10,
-    textAlign: "center"
+    backgroundColor: "rgba(255,255,255,1)",
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    paddingLeft: 2,
+    paddingRight: 2
   },
   profile_icon: {
-    top: 1,
-    left: 8,
     width: 20,
-    height: 20,
-    position: "absolute"
+    height: 20
   },
-  more: {
-    width: 37,
-    height: 41,
-    backgroundColor: "rgba(255,255,255,1)"
-  },
-  mas: {
-    top: 27,
-    position: "absolute",
+  miPerfil: {
     fontFamily: "open-sans-regular",
     color: "rgba(169,157,198,1)",
     fontSize: 10,
-    textAlign: "center"
+    textAlign: "center",
+    marginTop: 5
+  },
+  more: {
+    height: 41,
+    backgroundColor: "rgba(255,255,255,1)",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "flex-end",
+    paddingLeft: 2
   },
   more_icon: {
-    top: 11,
-    left: "28.11%",
     width: 16,
-    height: 4,
-    position: "absolute"
+    height: 4
+  },
+  mas: {
+    fontFamily: "open-sans-regular",
+    color: "rgba(169,157,198,1)",
+    fontSize: 10,
+    textAlign: "center",
+    alignSelf: "center",
+    marginTop: 13
   },
   invest_btn_container: {
     left: 0,
@@ -189,6 +181,10 @@ const styles = StyleSheet.create({
   invest_btn: {
     width: 55,
     height: 55
+  },
+  options_containerStack: {
+    height: 90,
+    marginTop: -4
   }
 });
 

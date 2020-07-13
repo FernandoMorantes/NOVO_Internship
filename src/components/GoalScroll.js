@@ -45,7 +45,7 @@ function GoalScroll(props) {
               ></Image>
               <View style={styles.goalValues2}>
                 <Text style={styles.goalValue2}>$0</Text>
-                <Text style={styles.goalValuetarget2}>$7.000.000</Text>
+                <Text style={styles.goalValuetarget2}>$8.000.000</Text>
               </View>
             </View>
           </View>
@@ -65,7 +65,7 @@ function GoalScroll(props) {
               ></Image>
               <View style={styles.goalValues3}>
                 <Text style={styles.goalValue3}>$0</Text>
-                <Text style={styles.goalValuetarget3}>$9.750.000</Text>
+                <Text style={styles.goalValuetarget3}>$8.000.000</Text>
               </View>
             </View>
           </View>
